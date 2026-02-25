@@ -47,9 +47,9 @@ fi
 chappyner_options="--user $user --cluster $cluster --tool $tool"
 
 # Tune options in case of training accounts
-if [[ $user =~ ^a([0-9]{2})tr[a-e]([[:alnum:]]{2})$ ]]; then
-    chappyner_options="$chappyner_options --no-startup-script --engine socket"
-fi
+#if [[ $user =~ ^a([0-9]{2})tr[a-e]([[:alnum:]]{2})$ ]]; then
+chappyner_options="$chappyner_options --no-startup-script --engine socket"
+#fi
 
 # Start tool via chappyner
 $HOME/.chappyner/venv/bin/chappyner $chappyner_options $batch_options
