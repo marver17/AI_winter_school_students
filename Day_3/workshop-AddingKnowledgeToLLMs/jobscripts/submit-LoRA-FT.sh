@@ -9,22 +9,10 @@
 #SBATCH --qos=boost_qos_dbg               # Queue name (boost_qos_dbg)
 #SBATCH --cpus-per-task=32			  # CPUS per task
 
-# Conda init
-__conda_setup="$('/leonardo_work/tra26_minwinsc/workshop-AddingKnowledgeToLLMs/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/leonardo_work/tra26_minwinsc/workshop-AddingKnowledgeToLLMs/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/leonardo_work/tra26_minwinsc/workshop-AddingKnowledgeToLLMs/miniconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/leonardo_work/tra26_minwinsc/workshop-AddingKnowledgeToLLMs/miniconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-
-# Activate conda environment
+# Activate environment
 module purge
-conda activate /leonardo_work/tra26_minwinsc/workshop-AddingKnowledgeToLLMs/envs/adding-knowledge-to-llms-env
+module load python
+source /leonardo_work/tra26_minwinsc/pyenvs/venv_llm/bin/activate
 
 # Check python path points out inside the Conda environment
 which python
