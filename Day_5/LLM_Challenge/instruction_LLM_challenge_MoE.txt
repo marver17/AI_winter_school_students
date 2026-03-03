@@ -1,0 +1,5 @@
+1. Go in the $WORK/parallelAI/MP directory
+2. Copy the launch_megatron_LMM_MOE_challenge.sh file in your scratch
+3. Implement a MoE model (you can find some examples here https://github.com/yanring/Megatron-MoE-ModelZoo/ )
+4. Tune your parallelism params + Micro&Global Batch size to obtain the higher Tflops
+5. Why do the Tflops for dense models are much higher than tflops than MoEs?
